@@ -27,3 +27,9 @@
 16. Februar: Implementation soweit fertig, nur noch Messungen + Bericht Schreiben
 
 23. Februar: Abgabe
+
+## Tools
+Report:
+- Word
+- LaTex
+
