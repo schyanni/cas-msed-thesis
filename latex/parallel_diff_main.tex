@@ -1,0 +1,60 @@
+\documentclass[]{article}
+\usepackage[ngerman]{babel}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+% Title Page
+\title{Temporäre Notizen: Parallele Differenz}
+\author{tbd}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Differenz-Algorithmus von Myers}
+Dieser Abschnitt betrachtet den Differenz-Algorithmus von Myers.
+\subsection{Standard-Algorithmus}
+\begin{algorithm}
+\begin{algorithmic}
+	\State $V[1] \gets 0$
+	\For{$D \gets 0$ to $MAX$}
+		\For{$k\gets -D$ to $D$ in steps of 2}
+			\If{$k == -D$ or $k\neq D$ and $V[k-1] < V[k+1]$}
+				\State $x\gets V[k+1]$
+			\Else
+				\State $x\gets V[k-1]$
+			\EndIf
+			\State $y\gets x-k$
+			\While{$x< N$ and $y < M$ and $a_{x+1} == b_{y+1}$}
+				\State $(x,y) \gets (x+1, y+1)$
+			\EndWhile
+			\State $V[k] \gets x$
+			\If{$x\ge N$ and $y\ge M$}
+				\State Length of an SES is $D$
+				\State Stop
+			\EndIf
+		\EndFor
+	\EndFor
+	\State Length of an SES is greater than $MAX$
+\end{algorithmic}
+\end{algorithm}
+
+Idee hinter dem Algorithmus:
+\begin{algorithm}
+\begin{algorithmic}
+	\For{$D\gets 0$ to $M+N$}
+		\For{$k\gets -D$ to $D$ in steps of 2}
+			\State Find the endpoint for the furthest reaching $D$-path in diagonal $k$
+			\If{$(N,M)$ is the endpoint}
+				\State The $D$-path is an optimal solution.
+				\State Stop
+			\EndIf
+		\EndFor
+	\EndFor
+\end{algorithmic}
+\end{algorithm}
+\end{document}          
