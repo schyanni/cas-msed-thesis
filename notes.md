@@ -20,7 +20,7 @@
 
 
 ## Zeitlinie
-20. Jnauar: Start
+20. Januar: Start
 29. Januar : Initiale Recherche und erste Diagramme
 5. Februar: Diagramme & Recherche Reviewed und gefixt
 6. Februar: Start Implementation (spätestens)
